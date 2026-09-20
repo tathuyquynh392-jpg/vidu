@@ -1,0 +1,137 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form thông tin và đăng ký học viên</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        form {
+            width: 450px;
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-bottom: 12px;
+        }
+
+        input, select, textarea {
+            padding: 7px;
+            margin-bottom: 10px;
+        }
+
+        .hobby {
+            width: auto;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PHẦN 1 -->
+    <form method="post" action="#">
+        <h2>Thông tin cá nhân</h2>
+
+        <label for="yourname">Họ và tên:</label>
+        <input type="text" id="yourname" name="yourname" required>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <label>Sở thích:</label>
+
+        <input type="checkbox" id="reading" name="hobby" value="reading">
+        <label for="reading">Đọc sách</label>
+
+        <input type="checkbox" id="music" name="hobby" value="music">
+        <label for="music">Nghe nhạc</label>
+
+        <input type="checkbox" id="sport" name="hobby" value="sport">
+        <label for="sport">Thể thao</label>
+
+        <div class="button">
+            <input type="submit" value="Gửi thông tin">
+            <input type="reset" value="Nhập lại">
+        </div>
+    </form>
+
+
+    <!-- PHẦN 2 -->
+    <form method="post" action="#">
+        <h2>Đăng ký học viên</h2>
+
+        <label for="fullName">Họ và tên:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        <br>
+
+        <label for="emailStudent">Email:</label>
+        <input type="email" id="emailStudent" name="emailStudent" required>
+        <br>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone">
+        <br>
+
+        <label for="birthday">Ngày sinh:</label>
+        <input type="date" id="birthday" name="birthday">
+        <br>
+
+        <label for="gender">Giới tính:</label>
+        <select id="gender" name="gender">
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="other">Khác</option>
+        </select>
+        <br>
+
+        <label for="course">Khóa học:</label>
+        <select id="course" name="course">
+            <option value="html">HTML/CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+        </select>
+        <br>
+
+        <label for="address">Địa chỉ:</label>
+        <textarea id="address" name="address" rows="3"></textarea>
+        <br>
+
+        <div class="button">
+            <input type="submit" value="Đăng ký">
+            <input type="reset" value="Nhập lại">
+        </div>
+    </form>
+
+</body>
+</html>
