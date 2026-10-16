@@ -1,0 +1,98 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển Anh - Việt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 350px;
+            max-width: calc(100% - 60px);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #cbd5e1;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1b2a7a;
+            font-size: 25px;
+        }
+
+        input
+        
+        }
+
+        .container {
+            background: white;
+            width: 350px;
+            max-width: calc(100% - 60px);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #cbd5e1;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1b2a7a;
+            font-size: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1b2a7a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #121c54;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Từ điển Anh - Việt</h1>
+        <p>Nhập từ tiếng Anh bạn muốn tra cứu</p>
+
+        <form action="dictionary.jsp" method="POST">
+            <input
+                type="text"
+                name="search"
+                placeholder="Ví dụ: hello, book, computer"
+                required
+                autofocus
+            >
+            <button type="submit">Tìm kiếm</button>
+        </form>
+    </div>
+</body>
+</html>
