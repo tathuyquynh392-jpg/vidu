@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Hoạt Hình</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f5;
+            color: #333;
+        }
+
+        /* Header cố định */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+
+        .logo {
+            color: #e53935;
+            font-size: 26px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .search-box input {
+            min-width: 0;
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-box button {
+            padding: 10px 15px;
+            background: #e53935;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        /* Thanh liên kết */
+        .head-link {
+            background: #252525;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .head-link a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 22px;
+            display: block;
+        }
+
+        .head-link a:hover,
+        .head-link a.active {
+            background: #e53935;
+            font-weight: bold;
+        }
+
+        /* Bố cục chính */
+        .container {
+            display: flex;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 25px auto;
+            padding: 0 20px;
+            align-items: flex-start;
+        }
+
+        /* Danh sách phim bên trái */
+        .left-content {
+            width: 300px;
+            flex-shrink: 0;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .left-content h2 {
+            font-size: 20px;
+            margin-top: 0;
+            color: #e53935;
+        }
+
+        .movie-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .movie-list li {
+            margin-bottom: 10px;
+        }
+
+        .movie-list a {
+            display: block;
+            padding: 12px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .movie-list a:hover,
+        .movie-list a.active {
+            background: #ffebee;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        /* Nội dung video bên phải */
+        .right-content {
+            flex: 1;
+            min-width: 0;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .right-content h1 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .description {
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #252525;
+            color: white;
+            text-align: center;
+            padding: 22px 10px;
+            margin-top: 30px;
+        }
+
+        /* Responsive cho máy tính bảng */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .left-content {
+                width: 100%;
+            }
+
+            .right-content {
+                width: 100%;
+            }
+        }
+
+        /* Responsive cho điện thoại */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 22px;
+            }
+
+            .head-link a {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 10px;
+                gap: 12px;
+                margin-top: 15px;
+            }
+
+            .left-content,
+            .right-content {
+                padding: 12px;
+            }
+
+            .right-content h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🎬 Thế Giới Hoạt Hình</div>
+
+        <form class="search-box" id="searchForm">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Tìm kiếm phim..."
+                aria-label="Tìm kiếm phim"
+            >
+            <button type="submit">Tìm</button>
+        </form>
+    </header>
+
+    <nav class="head-link">
+        <a href="#" class="active">Trang chủ</a>
+        <a href="#movieList">Phim mới</a>
+        <a href="#movieList">Xem nhiều</a>
+        <a href="#footer">Giới thiệu</a>
+    </nav>
+
+    <main class="container">
+
+        <aside class="left-content" id="movieList">
+            <h2>📺 Danh sách phim</h2>
+
+            <ul class="movie-list">
+                <li>
+                    <a href="#" class="active"
+                       data-title="Doraemon - Chú mèo máy đến từ tương lai"
+                       data-video="https://www.youtube.com/embed/8Z8VQ5z6q4A">
+                        Doraemon - Chú mèo máy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       data-title="Tom và Jerry - Cuộc rượt đuổi vui nhộn"
+                       data-video="https://www.youtube.com/embed/kP9TfCWaQT4">
+                        Tom và Jerry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       data-title="Larva - Những người bạn tinh nghịch"
+                       data-video="https://www.youtube.com/embed/7Y7f8W8a8W8">
+                        Larva - Ấu trùng tinh nghịch
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       data-title="Masha và Gấu"
+                       data-video="https://www.youtube.com/embed/9q1q2x3x4x5">
+                        Masha và Gấu
+                    </a>
+                </li>
+            </ul>
+
+            <p id="noResults" hidden>Không tìm thấy phim phù hợp.</p>
+        </aside>
+
+        <section class="right-content">
+            <h1 id="movieTitle">
+                Doraemon - Chú mèo máy đến từ tương lai
+            </h1>
+
+            <div class="video-container">
+                <iframe
+                    id="moviePlayer"
+                    src="https://www.youtube.com/embed/8Z8VQ5z6q4A"
+                    title="Video hoạt hình"
+                    allow="accelerometer; autoplay; clipboard-write;
+                           encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="description">
+                <h3>Giới thiệu phim</h3>
+                <p id="movieDescription">
+                    Cùng khám phá những chuyến phiêu lưu thú vị,
+                    những câu chuyện vui nhộn và bài học ý nghĩa
+                    qua thế giới hoạt hình.
+                </p>
+                <p>
+                    Chọn một bộ phim trong danh sách bên trái để xem.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <p>© 2026 Thế Giới Hoạt Hình. Bản quyền thuộc về website.</p>
+        <p>Chúc các bạn xem phim vui vẻ!</p>
+    </footer>
+
+    <script>
+        const movieLinks = document.querySelectorAll(".movie-list a");
+        const movieTitle = document.getElementById("movieTitle");
+        const moviePlayer = document.getElementById("moviePlayer");
+        const searchInput = document.getElementById("searchInput");
+        const searchForm = document.getElementById("searchForm");
+        const noResults = document.getElementById("noResults");
+
+        // Chọn phim trong danh sách
+        movieLinks.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+
+                movieLinks.forEach(function(item) {
+                    item.classList.remove("active");
+                });
+
+                link.classList.add("active");
+
+                movieTitle.textContent = link.dataset.title;
+                moviePlayer.src = link.dataset.video;
+            });
+        });
+
+        // Tìm kiếm phim theo tên
+        function searchMovies() {
+            const keyword = searchInput.value.trim().toLowerCase();
+            let found = 0;
+
+            movieLinks.forEach(function(link) {
+                const matched = link.textContent
+                    .toLowerCase()
+                    .includes(keyword);
+
+                link.parentElement.hidden = !matched;
+
+                if (matched) {
+                    found++;
+                }
+            });
+
+            noResults.hidden = found !== 0;
+        }
+
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            searchMovies();
+        });
+
+        searchInput.addEventListener("input", searchMovies);
+    </script>
+
+</body>
+</html>
