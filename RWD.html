@@ -1,0 +1,154 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #333;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 220px;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 3;
+            min-width: 280px;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #e5e5e5;
+            padding: 20px;
+            margin-bottom: 15px;
+            min-height: 100px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Máy tính bảng */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar,
+            .content {
+                width: 100%;
+            }
+        }
+
+        /* Điện thoại */
+        @media screen and (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar a {
+                padding: 12px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>My Website</h1>
+        <p>Responsive Web Design</p>
+    </div>
+
+    <div class="navbar">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Dịch vụ</a>
+        <a href="#">Liên hệ</a>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Đây là khu vực nội dung bên trái.</p>
+
+            <div class="card">Hình ảnh 1</div>
+            <div class="card">Hình ảnh 2</div>
+        </div>
+
+        <div class="content">
+            <h2>Nội dung chính</h2>
+            <p>Đây là khu vực nội dung chính của trang web.</p>
+
+            <div class="card">
+                <h3>Bài viết 1</h3>
+                <p>Nội dung bài viết thứ nhất.</p>
+            </div>
+
+            <div class="card">
+                <h3>Bài viết 2</h3>
+                <p>Nội dung bài viết thứ hai.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright © 2026 My Website</p>
+    </div>
+</body>
+</html>
+```
