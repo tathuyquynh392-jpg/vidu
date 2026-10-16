@@ -1,0 +1,247 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook đơn giản</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        /* Header cố định */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px #ccc;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #1877f2;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .search {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f0f2f5;
+            width: 250px;
+        }
+
+        .header-right {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* Bố cục chính */
+        .container {
+            display: flex;
+            margin-top: 60px;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Sidebar bên trái */
+        .sidebar-left {
+            width: 230px;
+            position: fixed;
+            top: 80px;
+            left: 20px;
+        }
+
+        .sidebar-left ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-left li {
+            padding: 15px 10px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .sidebar-left li:hover {
+            background-color: #ddd;
+        }
+
+        /* Nội dung chính */
+        main {
+            width: 600px;
+            margin-left: 250px;
+            margin-right: 300px;
+            flex-shrink: 0;
+        }
+
+        .post {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px #ddd;
+        }
+
+        .post h3 {
+            margin-top: 0;
+            color: #1877f2;
+        }
+
+        .post p {
+            line-height: 1.5;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .post-actions {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-around;
+            color: #606770;
+        }
+
+        /* Sidebar bên phải */
+        .sidebar-right {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 250px;
+        }
+
+        .sidebar-right h3 {
+            color: #65676b;
+        }
+
+        .contact {
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .contact:hover {
+            background-color: #ddd;
+        }
+
+        /* Giao diện điện thoại */
+        @media (max-width: 900px) {
+            .sidebar-right {
+                display: none;
+            }
+
+            main {
+                width: auto;
+                flex: 1;
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .sidebar-left {
+                display: none;
+            }
+
+            main {
+                margin-left: 0;
+            }
+
+            .search {
+                width: 130px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">facebook</div>
+        <input class="search" type="text" placeholder="Tìm kiếm trên Facebook">
+        <div class="header-right">🔔　💬　👤</div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar-left">
+            <ul>
+                <li>👤 Trang cá nhân</li>
+                <li>👥 Bạn bè</li>
+                <li>🕒 Kỷ niệm</li>
+                <li>📌 Đã lưu</li>
+                <li>👥 Nhóm</li>
+                <li>🎬 Video</li>
+                <li>🛒 Marketplace</li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="post">
+                <h3>Tạo bài viết</h3>
+                <input
+                    type="text"
+                    placeholder="Bạn đang nghĩ gì?"
+                    style="width:100%; padding:12px; border-radius:20px; border:1px solid #ddd;"
+                >
+                <div class="post-actions">
+                    <span>📹 Video trực tiếp</span>
+                    <span>🖼️ Ảnh/video</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <h3>Nguyễn Văn A</h3>
+                <p>Chào mọi người! Chúc mọi người một ngày tốt lành 😊</p>
+                <div class="post-actions">
+                    <span>👍 Thích</span>
+                    <span>💬 Bình luận</span>
+                    <span>↗️ Chia sẻ</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <h3>Trần Thị B</h3>
+                <p>Hôm nay là một ngày tuyệt vời để học HTML và CSS!</p>
+                <div class="post-actions">
+                    <span>👍 Thích</span>
+                    <span>💬 Bình luận</span>
+                    <span>↗️ Chia sẻ</span>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <h3>Người liên hệ</h3>
+            <div class="contact">🟢 Nguyễn Văn A</div>
+            <div class="contact">🟢 Trần Thị B</div>
+            <div class="contact">🟢 Lê Văn C</div>
+            <div class="contact">🟢 Phạm Thị D</div>
+        </aside>
+    </div>
+</body>
+</html>
+```
