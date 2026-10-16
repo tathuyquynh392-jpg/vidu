@@ -1,0 +1,124 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout HTML5 và CSS</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+
+        header {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        section {
+            flex: 3;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        article {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #e6e6e6;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Website</h1>
+        <p>Welcome to my website</p>
+    </header>
+
+    <nav>
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Dịch vụ</a>
+        <a href="#">Liên hệ</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Nội dung chính</h2>
+
+            <article>
+                <h3>Bài viết thứ nhất</h3>
+                <p>Đây là nội dung bài viết thứ nhất trên trang web.</p>
+            </article>
+
+            <article>
+                <h3>Bài viết thứ hai</h3>
+                <p>Đây là nội dung bài viết thứ hai trên trang web.</p>
+            </article>
+        </section>
+
+        <aside>
+            <h2>Thông tin bên cạnh</h2>
+            <p>Đây là khu vực hiển thị thông tin bổ sung.</p>
+            <p>Bạn có thể đặt liên kết hoặc quảng cáo tại đây.</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Copyright © 2026 My Website</p>
+    </footer>
+</body>
+</html>
+```
